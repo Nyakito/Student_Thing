@@ -1,3 +1,4 @@
-# Student_Thing
 
-[Visit The website](https://nyakito.github.io/Student_Thing/)
+# Student Tracker System
+
+[Visit the website](https://nyakito.github.io/Student_Thing/)
