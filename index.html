@@ -3,135 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A responsive student grade tracking dashboard for school administrators and teachers.">
+    <meta name="description" content="A student grade tracking dashboard for OHAN Group of Schools.">
+    <meta name="theme-color" content="#f6f7fb">
     <title>Student Grade Tracker | OHAN Group of Schools</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="app-shell">
-        <aside class="sidebar" id="sidebar">
-            <a class="brand" href="#" aria-label="Green Valley High School home">
-                <span class="brand-mark" aria-hidden="true">GV</span>
-                <span class="brand-copy">
-                    <strong>OHAN Group of Schools</strong>
-                    <span>Student Grade Tracker</span>
-                </span>
+    <div class="app-layout">
+        <aside class="navigation-rail" aria-label="Main navigation">
+            <a class="school-brand" href="#" aria-label="OHAN Group of Schools home">
+                <span class="brand-symbol" aria-hidden="true">O</span>
+                <span class="brand-name">OHAN <span>GROUP OF SCHOOLS</span></span>
             </a>
 
-            <nav class="primary-nav" aria-label="Main navigation">
-                <a class="nav-link active" href="#dashboard" aria-current="page">
-                    <span class="nav-icon" aria-hidden="true">▦</span><span>Dashboard</span>
+            <nav class="navigation-menu">
+                <a class="navigation-item is-current" href="#overview" aria-current="page">
+                    <span class="navigation-icon" aria-hidden="true">⌂</span>
+                    <span>Overview</span>
                 </a>
-                <a class="nav-link" href="#students">
-                    <span class="nav-icon" aria-hidden="true">♙</span><span>Students</span>
+                <a class="navigation-item" href="#records">
+                    <span class="navigation-icon" aria-hidden="true">♙</span>
+                    <span>Students</span>
                 </a>
-                <a class="nav-link" href="#subjects">
-                    <span class="nav-icon" aria-hidden="true">▤</span><span>Subjects</span>
+                <a class="navigation-item" href="#subject-summary">
+                    <span class="navigation-icon" aria-hidden="true">▤</span>
+                    <span>Subjects</span>
                 </a>
-                <a class="nav-link" href="#reports">
-                    <span class="nav-icon" aria-hidden="true">▧</span><span>Reports</span>
+                <a class="navigation-item" href="#reports">
+                    <span class="navigation-icon" aria-hidden="true">▥</span>
+                    <span>Reports</span>
                 </a>
-                <a class="nav-link" href="#settings">
-                    <span class="nav-icon" aria-hidden="true">⚙</span><span>Settings</span>
+                <a class="navigation-item" href="#preferences">
+                    <span class="navigation-icon" aria-hidden="true">⚙</span>
+                    <span>Settings</span>
                 </a>
             </nav>
 
-            <div class="sidebar-bottom">
-                <div class="academic-label">CURRENT ACADEMIC PERIOD</div>
-                <p><strong id="sidebar-term">Term 2</strong><span> · </span><strong id="sidebar-class">All classes</strong></p>
-                <p class="muted">Academic Year <span id="academic-year">2026</span></p>
+            <div class="navigation-spacer"></div>
+
+            <section class="term-summary" aria-label="Current academic period">
+                <p class="overline">CURRENT PERIOD</p>
+                <strong>Term 2 · 2026</strong>
+                <span>All classes</span>
+                <div class="term-progress" aria-hidden="true"><span></span></div>
+                <p class="term-caption">Academic year in progress</p>
+            </section>
+
+            <div class="profile-mini">
+                <div class="profile-avatar" aria-hidden="true">AD</div>
+                <div class="profile-copy">
+                    <strong>Administrator</strong>
+                    <span>School admin</span>
+                </div>
+                <span class="profile-menu" aria-hidden="true">⋮</span>
             </div>
         </aside>
 
-        <main class="main-area" id="dashboard">
-            <header class="topbar">
-                <button class="menu-button" id="menu-button" type="button" aria-label="Toggle navigation" aria-controls="sidebar" aria-expanded="false">☰</button>
-                <form class="global-search" role="search" id="global-search-form">
-                    <label class="sr-only" for="global-search">Search students</label>
-                    <span aria-hidden="true">⌕</span>
-                    <input id="global-search" type="search" placeholder="Search by student name or admission number..." autocomplete="off">
-                </form>
-                <div class="topbar-actions">
-                    <span class="school-year-pill">Academic year <strong>2026</strong></span>
-                    <button class="avatar-button" type="button" aria-label="Administrator account">AD</button>
-                    <span class="admin-label">Administrator</span>
+        <main class="main-content" id="overview">
+            <header class="top-header">
+                <div class="header-title">
+                    <p class="breadcrumb">SCHOOL MANAGEMENT <span>/</span> OVERVIEW</p>
+                    <h1>Student Grade Tracker</h1>
+                    <p class="header-subtitle">A clearer view of student performance and progress.</p>
+                </div>
+                <div class="header-tools">
+                    <label class="search-field">
+                        <span class="search-symbol" aria-hidden="true">⌕</span>
+                        <span class="visually-hidden">Search students</span>
+                        <input type="search" name="student-search" placeholder="Search students..." autocomplete="off">
+                        <kbd>/</kbd>
+                    </label>
+                    <button class="icon-button notification-button" type="button" aria-label="Notifications">
+                        <span aria-hidden="true">♧</span><i aria-hidden="true"></i>
+                    </button>
+                    <div class="header-avatar" aria-label="Administrator">AD</div>
                 </div>
             </header>
 
-            <div class="page-content">
-                <section class="page-heading">
+            <div class="page-body">
+                <section class="welcome-row">
                     <div>
-                        <p class="eyebrow">SCHOOL MANAGEMENT</p>
-                        <h1>Student Grade Tracker</h1>
-                        <p class="page-subtitle">Monitor student performance, attendance, and academic progress in one place.</p>
+                        <span class="status-chip"><span class="status-dot"></span> TERM 2 IN PROGRESS</span>
+                        <h2>Good afternoon, Administrator <span aria-hidden="true">✦</span></h2>
+                        <p>Here’s what’s happening across your school today.</p>
                     </div>
-                    <div class="heading-actions">
-                        <button class="button button-secondary" id="export-button" type="button">Export report</button>
-                        <button class="button button-primary" id="add-student-button" type="button">＋ Add student</button>
+                    <div class="welcome-actions">
+                        <button class="button button-tonal" type="button"><span aria-hidden="true">⇩</span> Export report</button>
+                        <button class="button button-filled" type="button"><span aria-hidden="true">＋</span> Add student</button>
                     </div>
                 </section>
 
-                <section class="stats-grid" aria-label="School overview">
-                    <article class="stat-card stat-blue">
-                        <div class="stat-icon" aria-hidden="true">♙</div>
-                        <div><p>Total students</p><strong id="total-students">—</strong><small>Across all classes</small></div>
+                <section class="metric-grid" aria-label="School overview statistics">
+                    <article class="metric-card">
+                        <div class="metric-topline">
+                            <span class="metric-label">Total students</span>
+                            <span class="metric-icon icon-lilac" aria-hidden="true">♙</span>
+                        </div>
+                        <div class="metric-value">—</div>
+                        <div class="metric-footnote"><span class="trend-neutral">School-wide</span> · across all classes</div>
                     </article>
-                    <article class="stat-card stat-green">
-                        <div class="stat-icon" aria-hidden="true">▤</div>
-                        <div><p>Subjects</p><strong id="total-subjects">—</strong><small>Active subjects</small></div>
+                    <article class="metric-card">
+                        <div class="metric-topline">
+                            <span class="metric-label">Active subjects</span>
+                            <span class="metric-icon icon-mint" aria-hidden="true">▤</span>
+                        </div>
+                        <div class="metric-value">—</div>
+                        <div class="metric-footnote">Subjects being tracked this term</div>
                     </article>
-                    <article class="stat-card stat-purple">
-                        <div class="stat-icon" aria-hidden="true">▦</div>
-                        <div><p>Average score</p><strong id="school-average">—</strong><small>Selected term</small></div>
+                    <article class="metric-card">
+                        <div class="metric-topline">
+                            <span class="metric-label">School average</span>
+                            <span class="metric-icon icon-blue" aria-hidden="true">↗</span>
+                        </div>
+                        <div class="metric-value">—<span class="metric-unit">/ 100</span></div>
+                        <div class="metric-footnote">Average score for selected term</div>
                     </article>
-                    <article class="stat-card stat-orange">
-                        <div class="stat-icon" aria-hidden="true">✓</div>
-                        <div><p>Attendance</p><strong id="school-attendance">—</strong><small>Average attendance</small></div>
+                    <article class="metric-card">
+                        <div class="metric-topline">
+                            <span class="metric-label">Attendance rate</span>
+                            <span class="metric-icon icon-peach" aria-hidden="true">✓</span>
+                        </div>
+                        <div class="metric-value">—<span class="metric-unit">%</span></div>
+                        <div class="metric-footnote">Average student attendance</div>
                     </article>
                 </section>
 
-                <section class="workspace-grid">
-                    <section class="panel records-panel" id="students">
-                        <div class="panel-heading">
+                <section class="content-grid">
+                    <section class="surface records-surface" id="records" aria-labelledby="records-title">
+                        <div class="surface-heading">
                             <div>
-                                <h2>Student records</h2>
-                                <p>View grades and academic performance.</p>
+                                <p class="section-kicker">ACADEMIC RECORDS</p>
+                                <h2 id="records-title">Student records</h2>
+                                <p class="surface-description">Review grades, attendance, and class performance.</p>
                             </div>
-                            <span class="record-count" id="record-count">0 records</span>
+                            <span class="count-pill">0 records</span>
                         </div>
 
-                        <div class="table-toolbar">
-                            <div class="toolbar-left">
-                                <label for="entries-per-page">Show
-                                    <select id="entries-per-page" name="entries-per-page">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select>
-                                    entries
-                                </label>
-                            </div>
-                            <div class="toolbar-right">
-                                <label for="sort-students">Sort by
-                                    <select id="sort-students" name="sort-students">
-                                        <option value="name-asc">Name (A–Z)</option>
-                                        <option value="name-desc">Name (Z–A)</option>
-                                        <option value="average-desc">Highest average</option>
-                                        <option value="average-asc">Lowest average</option>
-                                        <option value="admission-asc">Admission number</option>
-                                    </select>
-                                </label>
-                            </div>
+                        <div class="records-toolbar">
+                            <label class="select-control">
+                                <span>Show</span>
+                                <select name="page-size" aria-label="Entries per page">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                                <span>entries</span>
+                            </label>
+                            <label class="select-control sort-control">
+                                <span>Sort by</span>
+                                <select name="sort-order" aria-label="Sort students">
+                                    <option value="name-asc">Name (A–Z)</option>
+                                    <option value="name-desc">Name (Z–A)</option>
+                                    <option value="average-desc">Highest average</option>
+                                    <option value="average-asc">Lowest average</option>
+                                    <option value="admission-asc">Admission number</option>
+                                </select>
+                            </label>
                         </div>
 
-                        <div class="table-scroll">
-                            <table class="student-table">
-                                <caption class="sr-only">Student grades, attendance, averages, and actions</caption>
+                        <div class="table-viewport">
+                            <table class="student-data-table">
+                                <caption class="visually-hidden">Student grades, attendance, averages, and actions</caption>
                                 <thead>
                                     <tr>
                                         <th scope="col">#</th>
-                                        <th scope="col">Admission No.</th>
+                                        <th scope="col">Admission no.</th>
                                         <th scope="col">Student name</th>
                                         <th scope="col">Class</th>
                                         <th scope="col">Attendance</th>
@@ -139,21 +176,23 @@
                                         <th scope="col">English</th>
                                         <th scope="col">Biology</th>
                                         <th scope="col">Chemistry</th>
-                                        <th scope="col">Computer Studies</th>
+                                        <th scope="col">Computer studies</th>
                                         <th scope="col">Average</th>
                                         <th scope="col">Grade</th>
                                         <th scope="col">Position</th>
                                         <th scope="col">Actions</th>
                                     </tr>
-                                </thead id="student-table-body">
-                                <!-- JavaScript: render one table row per student inside this tbody. -->
-                                <tbody id="student-table-body">
-                                    <tr class="empty-state-row">
+                                </thead>
+                                <tbody>
+                                    <tr>
                                         <td colspan="14">
-                                            <div class="empty-state">
-                                                <span class="empty-state-icon" aria-hidden="true">▤</span>
-                                                <strong>No student records loaded</strong>
-                                                <p>Add your student data in JavaScript to populate this table.</p>
+                                            <div class="empty-message">
+                                                <div class="empty-illustration" aria-hidden="true">
+                                                    <span class="paper-back"></span><span class="paper-front">✓</span>
+                                                </div>
+                                                <h3>Your student records will appear here</h3>
+                                                <p>Once student data is connected, you’ll be able to review grades and track progress in this table.</p>
+                                                <button class="button button-tonal" type="button">＋ Add your first student</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -161,25 +200,28 @@
                             </table>
                         </div>
 
-                        <div class="table-footer">
-                            <p id="pagination-summary">Showing 0 of 0 students</p>
-                            <nav class="pagination" aria-label="Student table pages">
-                                <button type="button" id="previous-page" aria-label="Previous page" disabled>‹</button>
-                                <span id="page-indicator" aria-current="page">1</span>
-                                <button type="button" id="next-page" aria-label="Next page" disabled>›</button>
+                        <div class="table-pagination">
+                            <p>Showing <strong>0</strong> of <strong>0</strong> students</p>
+                            <nav class="pagination-controls" aria-label="Student table pages">
+                                <button type="button" aria-label="Previous page" disabled>‹</button>
+                                <span aria-current="page">1</span>
+                                <button type="button" aria-label="Next page" disabled>›</button>
                             </nav>
                         </div>
                     </section>
 
-                    <aside class="right-column">
-                        <section class="panel filter-panel" aria-labelledby="filters-heading">
-                            <div class="panel-heading compact-heading">
-                                <div><h2 id="filters-heading">Filters &amp; search</h2><p>Narrow down student records.</p></div>
+                    <aside class="support-column">
+                        <section class="surface filter-surface" aria-labelledby="filter-title">
+                            <div class="surface-heading compact-surface-heading">
+                                <div>
+                                    <p class="section-kicker">REFINE RESULTS</p>
+                                    <h2 id="filter-title">Filters</h2>
+                                </div>
+                                <span class="filter-glyph" aria-hidden="true">☷</span>
                             </div>
-                            <form id="filter-form" class="filter-form">
-                                <div class="form-field">
-                                    <label for="filter-class">Class</label>
-                                    <select id="filter-class" name="class">
+                            <form class="filters-form">
+                                <label class="field-label">Class
+                                    <select name="class">
                                         <option value="">All classes</option>
                                         <option value="Form 1A">Form 1A</option>
                                         <option value="Form 1B">Form 1B</option>
@@ -190,18 +232,16 @@
                                         <option value="Form 4A">Form 4A</option>
                                         <option value="Form 4B">Form 4B</option>
                                     </select>
-                                </div>
-                                <div class="form-field">
-                                    <label for="filter-term">Term</label>
-                                    <select id="filter-term" name="term">
+                                </label>
+                                <label class="field-label">Academic term
+                                    <select name="term">
                                         <option value="Term 1">Term 1</option>
                                         <option value="Term 2" selected>Term 2</option>
                                         <option value="Term 3">Term 3</option>
                                     </select>
-                                </div>
-                                <div class="form-field">
-                                    <label for="filter-grade">Grade</label>
-                                    <select id="filter-grade" name="grade">
+                                </label>
+                                <label class="field-label">Grade
+                                    <select name="grade">
                                         <option value="">All grades</option>
                                         <option value="A">A — Excellent</option>
                                         <option value="B">B — Very good</option>
@@ -209,54 +249,58 @@
                                         <option value="D">D — Fair</option>
                                         <option value="E">E — Needs improvement</option>
                                     </select>
-                                </div>
-                                <div class="form-field">
-                                    <label for="filter-attendance">Minimum attendance</label>
-                                    <select id="filter-attendance" name="attendance">
+                                </label>
+                                <label class="field-label">Minimum attendance
+                                    <select name="attendance">
                                         <option value="">Any attendance</option>
                                         <option value="90">90% and above</option>
                                         <option value="80">80% and above</option>
                                         <option value="70">70% and above</option>
                                     </select>
-                                </div>
-                                <div class="filter-actions">
-                                    <button class="button button-primary button-full" type="submit">Apply filters</button>
-                                    <button class="button button-secondary button-full" id="reset-filters" type="reset">Reset filters</button>
+                                </label>
+                                <div class="filter-buttons">
+                                    <button class="button button-filled button-wide" type="submit">Apply filters</button>
+                                    <button class="button button-text button-wide" type="reset">Reset filters</button>
                                 </div>
                             </form>
                         </section>
 
-                        <section class="panel grade-panel" aria-labelledby="grade-scale-heading">
-                            <div class="panel-heading compact-heading">
-                                <div><h2 id="grade-scale-heading">Grade scale</h2><p>Example grading bands</p></div>
+                        <section class="surface grading-surface" id="subject-summary" aria-labelledby="grading-title">
+                            <div class="surface-heading compact-surface-heading">
+                                <div>
+                                    <p class="section-kicker">ASSESSMENT GUIDE</p>
+                                    <h2 id="grading-title">Grade scale</h2>
+                                </div>
                             </div>
-                            <div class="grade-scale">
-                                <div class="grade-scale-header"><span>Marks</span><span>Grade</span><span>Remark</span></div>
-                                <div class="grade-band grade-a"><span>80–100</span><strong>A</strong><span>Excellent</span></div>
-                                <div class="grade-band grade-b"><span>70–79</span><strong>B</strong><span>Very good</span></div>
-                                <div class="grade-band grade-c"><span>60–69</span><strong>C</strong><span>Good</span></div>
-                                <div class="grade-band grade-d"><span>50–59</span><strong>D</strong><span>Fair</span></div>
-                                <div class="grade-band grade-e"><span>0–49</span><strong>E</strong><span>Needs improvement</span></div>
+                            <p class="surface-description">Example grading bands</p>
+                            <div class="grade-list">
+                                <div class="grade-row grade-row-a"><span class="grade-range">80–100</span><strong>A</strong><span>Excellent</span></div>
+                                <div class="grade-row grade-row-b"><span class="grade-range">70–79</span><strong>B</strong><span>Very good</span></div>
+                                <div class="grade-row grade-row-c"><span class="grade-range">60–69</span><strong>C</strong><span>Good</span></div>
+                                <div class="grade-row grade-row-d"><span class="grade-range">50–59</span><strong>D</strong><span>Fair</span></div>
+                                <div class="grade-row grade-row-e"><span class="grade-range">0–49</span><strong>E</strong><span>Needs support</span></div>
                             </div>
-                            <p class="scale-note">Configure these grade boundaries to match your school's approved grading policy.</p>
+                            <p class="grading-note"><span aria-hidden="true">ⓘ</span> Update these bands to match your school’s approved grading policy.</p>
                         </section>
 
-                        <section class="panel quick-links" aria-labelledby="quick-links-heading">
-                            <div class="panel-heading compact-heading"><div><h2 id="quick-links-heading">Quick links</h2></div></div>
-                            <a href="#subjects">Manage subjects <span aria-hidden="true">→</span></a>
-                            <a href="#reports">Performance reports <span aria-hidden="true">→</span></a>
-                            <a href="#settings">School settings <span aria-hidden="true">→</span></a>
+                        <section class="surface links-surface" aria-labelledby="shortcuts-title">
+                            <div class="surface-heading compact-surface-heading">
+                                <div><p class="section-kicker">GET THERE FASTER</p><h2 id="shortcuts-title">Quick links</h2></div>
+                            </div>
+                            <a class="shortcut-link" href="#subject-summary"><span class="shortcut-icon">▤</span><span>Manage subjects</span><span class="shortcut-arrow">↗</span></a>
+                            <a class="shortcut-link" href="#reports"><span class="shortcut-icon">▥</span><span>Performance reports</span><span class="shortcut-arrow">↗</span></a>
+                            <a class="shortcut-link" href="#preferences"><span class="shortcut-icon">⚙</span><span>School settings</span><span class="shortcut-arrow">↗</span></a>
                         </section>
                     </aside>
                 </section>
 
                 <footer class="page-footer">
-                    <span>© <span id="footer-year">2026</span> OHAN Group of Schools</span>
-                    <span>Student Grade Tracker <span class="footer-dot">•</span> Better students, brighter future.</span>
+                    <span>© 2026 <strong>OHAN Group of Schools</strong></span>
+                    <span>Student Grade Tracker <span class="footer-separator">·</span> Better students, brighter future.</span>
                 </footer>
             </div>
         </main>
     </div>
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
